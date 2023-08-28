@@ -29,19 +29,11 @@ csharp_proto_compile(
 csharp_library(
     name = "lib",
     srcs = [":csharp_protos"],
-    private_deps = [],
+    private_deps = [
+        "@main//netstandard.library",
+    ],
     target_frameworks = ["netstandard2.0"],
     deps = [
         "@main//google.protobuf",
-        "@main//microsoft.netcore.platforms",
-        "@main//microsoft.netcore.targets",
-        "@main//netstandard.library",
-        "@main//system.buffers",
-        "@main//system.diagnostics.debug",
-        "@main//system.diagnostics.tools",
-        "@main//system.memory",
-        "@main//system.numerics.vectors",
-        "@main//system.runtime",
-        "@main//system.runtime.compilerservices.unsafe",
     ],
 )
